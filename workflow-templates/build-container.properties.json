@@ -1,0 +1,11 @@
+{
+    "name": "Build Container Workflow",
+    "description": "Build container workflow ",
+    "iconName": "oci-icon",
+    "categories": [
+        "Docker"
+    ],
+    "filePatterns": [
+        "^Dockerfile"
+    ]
+}
