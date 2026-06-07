@@ -1,0 +1,17 @@
+{
+  "name": "PR Check and Auto-Bump",
+  "description": "Unified workflow that checks branch naming and auto-bumps version based on branch type and technology",
+  "iconName": "git-pull-request",
+  "categories": [
+    "Automation",
+    "Continuous integration"
+  ],
+  "filePatterns": [
+    "galaxy.yml",
+    "package.json",
+    "pyproject.toml",
+    "setup.py",
+    "Cargo.toml",
+    "version.txt"
+  ]
+}
