@@ -1,0 +1,22 @@
+name: 'Check Branch Name'
+
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
+
+jobs:
+  test_job:
+    runs-on: ubuntu-latest
+    name: "job to test branch name"
+    steps:
+      - name: Check branch name
+        env:
+          BRANCH: ${{ github.head_ref }}
+        shell: bash
+        run: |
+          if [[ "$BRANCH" =~ ^(feat|fix|doc|docs|chore|refactor|test|style|perf|ci|major)/.+$ ]]; then
+            echo "✅ Branch name $BRANCH is valid"
+          else
+            echo "::error::Branch name $BRANCH does not follow conventional prefixes (feat/, fix/, doc/, docs/, chore/, refactor/, test/, style/, perf/, ci/, major/)"
+            exit 1
+          fi
